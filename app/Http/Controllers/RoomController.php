@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -11,7 +12,8 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //
+        $rooms = Room::with(['photos', 'amenities'])->get();
+        return view('rooms', ['rooms' => $rooms]);
     }
 
     /**
@@ -33,9 +35,9 @@ class RoomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Room $room)
     {
-        //
+        return view('room_details', ['room' => $room]);
     }
 
     /**
