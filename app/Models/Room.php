@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Room extends Model
@@ -25,7 +26,15 @@ class Room extends Model
         return $this->hasMany(Booking::class);
     }
 
-    public function photos(): HasMany{
-        return $this->hasMany(Photo::class, 'room_id');
+    public function photos(): BelongsToMany{
+        return $this->belongsToMany(Photo::class, 'room_photos', 'room_id', 'photo_id');
+    }
+
+    public function amenity() : BelongsToMany{
+        return $this->belongsToMany(Amenity::class, 'room_amenities', 'room_id', 'amenities_id');
+    }
+
+    public function offers() {
+        return self::with(['photos', 'amenity'])->where('offer', 'true')->get();
     }
 }
