@@ -20,4 +20,4 @@ Route::get('/rooms', [RoomController::class, 'index']);
 
 Route::get('/rooms_details/{room}', [RoomController::class, 'show']);
 
-Route::get('/contact', [ContactController::class, 'store']);
+Route::get('/contact', [ContactController::class, 'create']);

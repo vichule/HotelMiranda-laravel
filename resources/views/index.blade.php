@@ -70,11 +70,11 @@
                 @foreach ($rooms as $room)
                     <div class="swiper-slide homerooms__slider__container_item">
                         <div class="homerooms__framediv">
-                            @foreach (json_decode($room['amenity_name']) as $amenity)
+                            @foreach (($room['amenity']) as $amenity)
                                 <img src="{{ getAmenities($amenity) }}" class="homerooms__complements">
                             @endforeach
                         </div>
-                        <img id="roomsImg" src="{{ json_decode($room['photo_url'])[0] }}" alt="">
+                        <img id="roomsImg" src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                         <div class="homerooms__slider__descriptions">
                             <div class="homerooms__slider__descriptions__item" id="description1">
                                 <div>

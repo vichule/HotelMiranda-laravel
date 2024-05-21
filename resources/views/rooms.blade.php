@@ -16,9 +16,9 @@
             <div class="swiper-wrapper ">
                 @foreach ($rooms as $room)
                     <div class="swiper-slide popularList__slider__wrapper__slide">
-                        <img src="{{ json_decode($room['photo_url'])[0] }}" alt="">
+                        <img src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                         <div id="amenities_frame">
-                            @foreach (json_decode($room['amenity_name']) as $amenity)
+                            @foreach (($room['amenity']) as $amenity)
                                 <img src="{{ getAmenities($amenity) }}" id="roomsComplement">
                             @endforeach
                         </div>
