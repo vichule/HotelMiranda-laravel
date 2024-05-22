@@ -14,7 +14,19 @@ class RoomController extends Controller
     public function index()
     {
         $rooms = Room::with(['photos', 'amenity'])->get();
+        return view('index', ['rooms' => $rooms]);
+    }
+
+    public function roomIndex()
+    {
+        $rooms = Room::with(['photos', 'amenity'])->get();
         return view('rooms', ['rooms' => $rooms]);
+    }
+
+    public function offers()
+    {
+        $rooms = Room::offers();
+        return view('offers', ['rooms' => $rooms]);
     }
 
     /**

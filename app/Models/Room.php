@@ -34,7 +34,7 @@ class Room extends Model
         return $this->belongsToMany(Amenity::class, 'room_amenities', 'room_id', 'amenities_id');
     }
 
-    public function offers() {
+    public static function offers() {
         return self::with(['photos', 'amenity'])->where('offer', 'true')->get();
     }
 }
