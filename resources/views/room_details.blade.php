@@ -7,7 +7,7 @@
         <div class="bannerGeneric__nav">
             <a href="{{ route('index') }}" id="homeBtn">Home</a>
             <p>|</p>
-            <a href="room_details.php?id={{ $room['room_id'] }}" id="currentBtn">Room Details</a>
+            <a href="{{ route('room_details', ['room' => $room['id']]) }}" id="currentBtn">Room Details</a>
         </div>
     </section>
 
@@ -18,7 +18,7 @@
                     <h1>Room Number {{ $room['room_number'] }}</h1>
                     <div id="titleDiv">
                         <h4>{{ $room['room_type'] }}</h4>
-                        <p>${{ discountPrice() }}/Night</p>
+                        <p>${{ $room->discountPrice() }}/Night</p>
                     </div>
                 </div>
                 <div class="details-container__image">
@@ -75,8 +75,8 @@
         <h4>Amenities</h4>
         <div class="amenities-list">
             <ul>
-                @foreach (json_decode($room['amenity_name']) as $amenity)
-                    <li><img src="{{ getAmenities($amenity) }}">{{ $amenity }}</li>
+                @foreach (($room['amenity']) as $amenity)
+                    <li><img src="{{ $amenity->getAmenities() }}">{{ $amenity['name'] }}</li>
                 @endforeach
 
             </ul>
@@ -84,7 +84,7 @@
         </div>
         <div class="amenities-profile">
             <div class="amenities-profile__checkmark">&#10003;</div>
-            <img src="./assets/detailsroom/image2.jpeg" alt="">
+            <img src={{asset("./assets/detailsroom/image2.jpeg")}} alt="">
             <h4>Javier Cab.D.</h4>
             <h2>FOUNDER, QUX CO.</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -104,17 +104,17 @@
             <div class="swiper-wrapper relatedRooms-slider-wrapper">
                 @foreach ($related as $room)
                     <div class="swiper-slide relatedRooms-slider__slide">
-                        <img id="roomsImg" src="{{ json_decode($room['photo_url'])[0] }}" alt="">
+                        <img id="roomsImg" src="{{ ($room['photos'])[0]['photo']}}" alt="">
                         <div id="amenities_frame">
-                            @foreach (json_decode($room['amenity_name']) as $amenity)
-                                <img src="{{ getAmenities($amenity) }}" id="roomsComplement">
+                            @foreach (($room['amenity']) as $amenity)
+                                <img src="{{ $amenity->getAmenities() }}" id="roomsComplement">
                             @endforeach
                         </div>
                         <h1 class="relatedRooms-slider__slide__title">{{ $room['room_type'] }}</h1>
                         <p class="relatedRooms-slider__slide__par">{{ $room['description'] }}</p>
                         <span
-                            class="relatedRooms-slider__slide__price">${{ discountPrice($room['discount'], $room['price']) }}/Night</span>
-                        <a href="room_details.php?id={{ $room['room_id'] }}">Book Now</a>
+                            class="relatedRooms-slider__slide__price">${{ $room->discountPrice() }}/Night</span>
+                        <a href="{{ route('room_details', ['room' => $room['id']]) }}">Book Now</a>
                     </div>
                 @endforeach
             </div>
@@ -125,4 +125,4 @@
         </div>
     </section>
 @endsection
-<script src="./js/swiper.js" type="module"></script>
+<script src={{asset("./js/swiper.js")}} type="module"></script>

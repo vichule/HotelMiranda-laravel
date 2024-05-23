@@ -11,15 +11,15 @@
                 exercitat ion ullamco laboris nisi.</p>
 
             <div class="footerContainer__main__intro__socials">
-                <img class="footerContainer__main__intro__socials__img" src="./assets/footer/facebook-logo.png"
+                <img class="footerContainer__main__intro__socials__img" src={{asset("./assets/footer/facebook-logo.png")}}
                     alt="">
-                <img class="footerContainer__main__intro__socials__img" src="./assets/footer/twitter-logo.png"
+                <img class="footerContainer__main__intro__socials__img" src={{asset("./assets/footer/twitter-logo.png")}}
                     alt="">
-                <img class="footerContainer__main__intro__socials__img" src="./assets/footer/behance-logo.png"
+                <img class="footerContainer__main__intro__socials__img" src={{asset("./assets/footer/behance-logo.png")}}
                     alt="">
-                <img class="footerContainer__main__intro__socials__img" src="./assets/footer/linkedin-logo.png"
+                <img class="footerContainer__main__intro__socials__img" src={{asset("./assets/footer/linkedin-logo.png")}}
                     alt="">
-                <img class="footerContainer__main__intro__socials__img" src="./assets/footer/youtube-logo.png"
+                <img class="footerContainer__main__intro__socials__img" src={{asset("./assets/footer/youtube-logo.png")}}
                     alt="">
             </div>
         </div>
@@ -47,7 +47,7 @@
         <div class="footerContainer__main__contact">
             <h2 class="footerContainer__main__contact__title">Contact Us.</h2>
             <div class="footerContainer__main__contact__item">
-                <img class="footerContainer__main__contact__item__img" src="./assets/footer/phone-icon.png"
+                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/phone-icon.png")}}
                     alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Phone Number</h1>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="footerContainer__main__contact__item">
-                <img class="footerContainer__main__contact__item__img" src="./assets/footer/email-icon.png"
+                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/email-icon.png")}}
                     alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Email</h1>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="footerContainer__main__contact__item">
-                <img class="footerContainer__main__contact__item__img" src="./assets/footer/address-icon.png"
+                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/address-icon.png")}}
                     alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Address</h1>

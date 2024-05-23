@@ -6,10 +6,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Old+Standard+TT&family=Roboto&display=swap"
         rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href={{asset("styles.css")}} rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- script -->
-    <script defer src="./js/script.js" type="text/javascript" defer></script>
+    <script defer src={{asset("./js/script.js")}} type="text/javascript" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>

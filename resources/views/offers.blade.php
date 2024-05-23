@@ -14,13 +14,13 @@
     <section class="offermain">
         @foreach ($rooms as $room)
             <div class="offermain__item">
-                <a href="room_details.php?id={{ $room['room_id'] }}"><img src="{{ ($room['photos'])[0]['photo'] }}"
+                <a href="{{ route('room_details', ['room' => $room['id']]) }}"><img src="{{ ($room['photos'])[0]['photo'] }}"
                         alt=""></a>
                 <div class="offermain__item-card">
                     <div class="offermain__item__container1">
                         <div class="offermain__item__container1__titles">
                             <h1>Room Number {{ $room['room_number'] }}</h1>
-                            <a href="room_details.php?id={{ $room['room_id'] }}">{{ $room['room_type'] }}</a>
+                            <a href="{{ route('room_details', ['room' => $room['id']]) }}">{{ $room['room_type'] }}</a>
                         </div>
                         <div class="offermain__item__container1__prices">
                             <p>${{ $room['price'] }}/Night</p>
@@ -30,7 +30,7 @@
                     <div class="offermain__item__container2">
                         <div class="offermain__item__container2__description">
                             <p>{{ $room['description'] }}</p>
-                            <a href="room_details.php?id={{ $room['room_id'] }}" class="button">BOOK NOW</a>
+                            <a href="{{ route('room_details', ['room' => $room['id']]) }}" class="button">BOOK NOW</a>
                         </div>
                         <div class="offermain__item__container2__list">
                             <ul>
@@ -63,7 +63,7 @@
                         <h1 class="popularList__slider__wrapper__slide__title">{{ $room['room_type'] }}</h1>
                         <p class="popularList__slider__wrapper__slide__par">{{ $room['description'] }}</p>
                         <span class="popularList__slider__wrapper__slide__price">${{ $room['price'] }}/Night</span>
-                        <a href="room_details.php?id={{ $room['room_id'] }}">Book Now</a>
+                        <a href="{{ route('room_details', ['room' => $room['id']]) }}">Book Now</a>
                     </div>
                 @endforeach
             </div>
@@ -75,4 +75,4 @@
 
     </section>
 @endsection
-<script src="./js/swiper.js" type="module"></script>
+<script src={{asset("./js/swiper.js")}} type="module"></script>

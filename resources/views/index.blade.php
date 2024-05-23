@@ -32,15 +32,15 @@
             <p class="homeAbout__firstContainer__par">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="rooms.php"><button class="homeAbout__firstContainer__btn">BOOK NOW</button></a>
+            <a href="{{ route('rooms') }}"><button class="homeAbout__firstContainer__btn">BOOK NOW</button></a>
         </div>
 
         <div class="homeAbout__secondContainer">
             <div class="homeAbout__secondContainer__card1">
-                <img src="./assets/home/team.jpg" alt="" class="homeAbout__secondContainer__card1__pic">
+                <img src={{asset("./assets/home/team.jpg")}} alt="" class="homeAbout__secondContainer__card1__pic">
                 <div class="homeAbout__secondContainer__card1__teamContainer"
-                    style="background-image: url('./assets/home/backTeam.png')">
-                    <img src="./assets/home/teamImg.png" alt=""
+                    style="background-image: url({{asset('./assets/home/backTeam.png')}})">
+                    <img src={{asset("./assets/home/teamImg.png")}} alt=""
                         class="homeAbout__secondContainer__card1__teamContainer__img">
                     <h1 class="homeAbout__secondContainer__card1__teamContainer__title">Strong Team</h1>
                     <p class="homeAbout__secondContainer__card1__teamContainer__par">Lorem ipsum dolor sit amet, consectetur
@@ -49,9 +49,9 @@
             </div>
 
             <div class="homeAbout__secondContainer__card2">
-                <img src="./assets/home/luxury_room.jpg" alt="" class="homeAbout__secondContainer__card2__pic">
+                <img src={{asset("./assets/home/luxury_room.jpg")}} alt="" class="homeAbout__secondContainer__card2__pic">
                 <div class="homeAbout__secondContainer__card2__roomContainer">
-                    <img src="./assets/home/teamLuxury.png" alt=""
+                    <img src={{asset("./assets/home/teamLuxury.png")}} alt=""
                         class="homeAbout__secondContainer__card2__roomContainer__img">
                     <h1 class="homeAbout__secondContainer__card2__roomContainer__title">Luxury Room</h1>
                     <p class="homeAbout__secondContainer__card2__roomContainer__par">Lorem ipsum dolor sit amet, consectetur
@@ -120,42 +120,42 @@
 
                 <div class="swiper-slide facilities__slider__container__item"
                     style="background-image: url(./assets/home/01.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature1.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature1.png")}}>
                     <h1 class="facilities__slider__container__item__title">Have High Rating</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item"
                     style="background-image: url(./assets/home/02.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature2.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature2.png")}}>
                     <h1 class="facilities__slider__container__item__title">Quiet Hours</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item"
                     style="background-image: url(./assets/home/03.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature3.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature3.png")}}>
                     <h1 class="facilities__slider__container__item__title">Best Locations</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item"
                     style="background-image: url(./assets/home/04.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature4.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature4.png")}}>
                     <h1 class="facilities__slider__container__item__title">Free Cancellation</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item"
                     style="background-image: url(./assets/home/05.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature5.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature5.png")}}>
                     <h1 class="facilities__slider__container__item__title">Payment Options</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item"
                     style="background-image: url(./assets/home/06.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature6.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature6.png")}}>
                     <h1 class="facilities__slider__container__item__title">Special Offers</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>

@@ -25,8 +25,8 @@
                         <h1 class="popularList__slider__wrapper__slide__title">{{ $room['room_type'] }}</h1>
                         <p class="popularList__slider__wrapper__slide__par">{{ $room['description'] }}</p>
                         <span
-                            class="popularList__slider__wrapper__slide__price">${{ discountPrice() }}/Night</span>
-                        <a href="room_details.php?id={{ $room['room_id'] }}">Book Now</a>
+                            class="popularList__slider__wrapper__slide__price">${{ $room->discountPrice() }}/Night</span>
+                        <a href="{{ route('room_details', ['room' => $room['id']]) }}">Book Now</a>
                     </div>
                 @endforeach
 
@@ -36,4 +36,4 @@
             <div class="swiper-pagination"></div>
     </section>
 @endsection
-<script src="./js/swiper.js" type="module"></script>
+<script src={{asset("./js/swiper.js")}} type="module"></script>

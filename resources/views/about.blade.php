@@ -18,30 +18,30 @@
             customers.</p>
         <div class="aboutintro__featuresContainer">
             <div class="aboutintro__featuresContainer__item">
-                <img src="./assets/about/breakfast.png" alt="">
+                <img src={{asset("./assets/about/breakfast.png")}} alt="">
                 <p>BREAKFAST</p>
             </div>
             <div class="aboutintro__featuresContainer__item gold">
-                <img src="./assets/about/plane.png" alt="">
+                <img src={{asset("./assets/about/plane.png")}} alt="">
                 <p>AIRPORT PICKUP</p>
             </div>
             <div class="aboutintro__featuresContainer__item">
-                <img src="./assets/about/guide.png" alt="">
+                <img src={{asset("./assets/about/guide.png")}} alt="">
                 <p>CITY GUIDE</p>
             </div>
             <div class="aboutintro__featuresContainer__item" id="bbq">
-                <img src="./assets/about/bbq.png" alt="">
+                <img src={{asset("./assets/about/bbq.png")}} alt="">
                 <p>BBQ PARTY</p>
             </div>
             <div class="aboutintro__featuresContainer__item">
-                <img src="./assets/about/luxury.png" alt="">
+                <img src={{asset("./assets/about/luxury.png")}} alt="">
                 <p>LUXURY ROOM</p>
             </div>
         </div>
     </section>
 
     <section class="restaurant">
-        <img class="restaurant__img" src="./assets/about/restaurant.jpg" alt="">
+        <img class="restaurant__img" src={{asset("./assets/about/restaurant.jpg")}} alt="">
         <div class="restaurant__container">
             <h1 class="restaurant__container__title">RESTAURANT</h1>
             <h2 class="restaurant__container__subtitle">Get Restaurant Facilities & Many Other More</h2>
@@ -60,42 +60,42 @@
 
                 <div class="swiper-slide facilities__slider__container__item darkLight"
                     style="background-image: url(./assets/about/01.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature1.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature1.png")}}>
                     <h1 class="facilities__slider__container__item__title">Have High Rating</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item darkLight"
                     style="background-image: url(./assets/about/02.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature2.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature2.png")}}>
                     <h1 class="facilities__slider__container__item__title">Quiet Hours</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item darkLight"
                     style="background-image: url(./assets/about/03.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature3.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature3.png")}}>
                     <h1 class="facilities__slider__container__item__title">Best Locations</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item darkLight"
                     style="background-image: url(./assets/about/04.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature4.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature4.png")}}>
                     <h1 class="facilities__slider__container__item__title">Free Cancellation</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item darkLight"
                     style="background-image: url(./assets/about/05.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature5.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature5.png")}}>
                     <h1 class="facilities__slider__container__item__title">Payment Options</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
                 </div>
                 <div class="swiper-slide facilities__slider__container__item darkLight"
                     style="background-image: url(./assets/about/06.png);">
-                    <img class="facilities__slider__container__item__img" src="./assets/home/feature6.png">
+                    <img class="facilities__slider__container__item__img" src={{asset("./assets/home/feature6.png")}}>
                     <h1 class="facilities__slider__container__item__title">Special Offers</h1>
                     <p class="facilities__slider__container__item__par">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna..</p>
@@ -112,36 +112,36 @@
         <h2 class="counter__subtitle">Some Fun Facts</h2>
         <div class="counter__facts">
             <div class="counter__facts__item">
-                <img src="./assets/about/fact1.png" alt="">
+                <img src={{asset("./assets/about/fact1.png")}} alt="">
                 <div class="counter__facts__item__description">
                     <p class="counter__facts__item__description__num">8000</p>
                     <p class="counter__facts__item__description__par">Happy Users</p>
                 </div>
-                <img src="./assets/about/arrow.png" alt="">
+                <img src={{asset("./assets/about/arrow.png")}} alt="">
             </div>
             <div class="counter__facts__item">
-                <img src="./assets/about/fact2.png" alt="">
+                <img src={{asset("./assets/about/fact2.png")}}>
                 <div class="counter__facts__item__description">
                     <p class="counter__facts__item__description__num">10M</p>
                     <p class="counter__facts__item__description__par">Reviews & Appriciate</p>
                 </div>
-                <img src="./assets/about/arrow.png" alt="">
+                <img src={{asset("./assets/about/arrow.png")}}>
             </div>
             <div class="counter__facts__item">
-                <img src="./assets/about/fact3.png" alt="">
+                <img src={{asset("./assets/about/fact3.png")}}>
                 <div class="counter__facts__item__description">
                     <p class="counter__facts__item__description__num">100</p>
                     <p class="counter__facts__item__description__par">Country Coverage</p>
                 </div>
-                <img src="./assets/about/arrow.png" alt="">
+                <img src={{asset("./assets/about/arrow.png")}}>
             </div>
         </div>
 
 
         <div class="swiper counter__slide">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img id="counterImg" src="./assets/about/counter1.jpg" alt=""></div>
-                <div class="swiper-slide"><img id="counterImg" src="./assets/about/counter2.jpg" alt=""></div>
+                <div class="swiper-slide"><img id="counterImg" src={{asset("./assets/about/counter1.jpg")}} alt=""></div>
+                <div class="swiper-slide"><img id="counterImg" src={{asset("./assets/about/counter2.jpg")}} alt=""></div>
 
             </div>
             <div class="swiper-pagination"></div>
@@ -149,4 +149,4 @@
         </div>
     </section>
 @endsection
-<script src="./js/swiper.js" type="module"></script>
+<script src={{asset("./js/swiper.js")}} type="module"></script>
