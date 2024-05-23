@@ -5,7 +5,7 @@
         <p class="bannerGeneric__title">THE ULTIMATE LUXURY EXPERIENCE</p>
         <h1 class="bannerGeneric__subtitle">Ultimate Room</h1>
         <div class="bannerGeneric__nav">
-            <a href="index.php" id="homeBtn">Home</a>
+            <a href="{{ route('index') }}" id="homeBtn">Home</a>
             <p>|</p>
             <a href="room_details.php?id={{ $room['room_id'] }}" id="currentBtn">Room Details</a>
         </div>

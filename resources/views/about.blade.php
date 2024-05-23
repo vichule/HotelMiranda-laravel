@@ -5,9 +5,9 @@
         <p class="bannerGeneric__title">THE ULTIMATE LUXURY EXPERIENCE</p>
         <h1 class="bannerGeneric__subtitle">About Us</h1>
         <div class="bannerGeneric__nav">
-            <a href="index.php" id="homeBtn">Home</a>
+            <a href="{{ route('index') }}" id="homeBtn">Home</a>
             <p>|</p>
-            <a href="about.php" id="currentBtn">About Us</a>
+            <a href="{{ route('about') }}" id="currentBtn">About Us</a>
         </div>
     </section>
 

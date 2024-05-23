@@ -11,16 +11,16 @@
         </div>
 
         <ul class="header__container__navbar hidden">
-            <a href="about.php">
+            <a href="{{ route('about') }}">
                 <li>About Us</li>
             </a>
-            <a href="rooms.php">
+            <a href="{{ route('rooms') }}">
                 <li>Rooms</li>
             </a>
-            <a href="offers.php">
+            <a href="{{ route('offers') }}">
                 <li>Offers</li>
             </a>
-            <a href="contact.php">
+            <a href="{{ route('contact') }}">
                 <li>Contact</li>
             </a>
         </ul>
@@ -32,16 +32,16 @@
 
     </div>
     <ul class="header__mobile-menu hidden">
-        <a href="about.php">
+        <a href="{{ route('about') }}">
             <li>About Us</li>
         </a>
-        <a href="rooms.php">
+        <a href="{{ route('rooms') }}">
             <li>Rooms</li>
         </a>
-        <a href="offers.php">
+        <a href="{{ route('offers') }}">
             <li>Offers</li>
         </a>
-        <a href="contact.php">
+        <a href="{{ route('contact') }}">
             <li>Contact</li>
         </a>
     </ul>

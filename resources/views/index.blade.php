@@ -4,13 +4,13 @@
     <section class="banner">
         <p class="banner__title">THE ULTIMATE LUXURY EXPERIENCE</p>
         <h1 class="banner__subtitle">The Perfect Base For You</h1>
-        <a href="about.php"><button class="banner__indexBtn1">TAKE A TOUR</button></a>
+        <a href="{{ route('about') }}"><button class="banner__indexBtn1">TAKE A TOUR</button></a>
 
 
-        <a href="contact.php"><button class="banner__indexBtn2">LEARN MORE</button></a>
+        <a href="{{ route('contact') }}"><button class="banner__indexBtn2">LEARN MORE</button></a>
     </section>
     <section class="dateCheck">
-        <form id="datecheckform" class="dateCheck__container" action="rooms.php">
+        <form id="datecheckform" class="dateCheck__container" action="{{ route('rooms') }}">
             <div>
                 <label for="arrival" class="dateCheck__container__label">Arrival Date</label>
                 <input type="date" id="arrival" name="arrival" min="2024-03-01" max="2028-12-31"
@@ -64,7 +64,6 @@
     <section class="homerooms">
         <h1 class="homerooms__title">ROOMS</h1>
         <h2 class="homerooms__subtitle">Hand Picked Rooms</h2>
-        {{-- <img src="./assets/home/frame_rooms.jpg" alt="" class="homerooms__complements"> --}}
         <div class="swiper homerooms__slider">
             <div class="swiper-wrapper homerooms__slider__container">
                 @foreach ($rooms as $room)
