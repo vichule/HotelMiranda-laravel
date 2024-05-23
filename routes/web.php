@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/about', 'about')->name('about');
 
-Route::view('/offers', 'offers')->name('offers');
+Route::get('/offers', [RoomController::class, 'offers'])->name('offers');
 
 Route::get('/', [RoomController::class, 'index'])->name('index');
 

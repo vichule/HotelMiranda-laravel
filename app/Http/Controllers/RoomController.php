@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use Illuminate\Http\Request;
-require_once __DIR__.('./../../../utils/methods.php');
 
 class RoomController extends Controller
 {
@@ -20,13 +19,15 @@ class RoomController extends Controller
     public function roomIndex()
     {
         $rooms = Room::with(['photos', 'amenity'])->get();
+        
         return view('rooms', ['rooms' => $rooms]);
     }
 
     public function offers()
     {
         $rooms = Room::offers();
-        return view('offers', ['rooms' => $rooms]);
+        $popular = Room::popular();
+        return view('offers', ['rooms' => $rooms, 'popular' => $popular]);
     }
 
     /**
