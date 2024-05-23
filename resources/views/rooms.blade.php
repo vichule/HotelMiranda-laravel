@@ -19,13 +19,13 @@
                         <img src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                         <div id="amenities_frame">
                             @foreach (($room['amenity']) as $amenity)
-                                <img src="{{ getAmenities($amenity) }}" id="roomsComplement">
+                                <img src="{{ $amenity->getAmenities() }}" id="roomsComplement">
                             @endforeach
                         </div>
                         <h1 class="popularList__slider__wrapper__slide__title">{{ $room['room_type'] }}</h1>
                         <p class="popularList__slider__wrapper__slide__par">{{ $room['description'] }}</p>
                         <span
-                            class="popularList__slider__wrapper__slide__price">${{ discountPrice($room['discount'], $room['price']) }}/Night</span>
+                            class="popularList__slider__wrapper__slide__price">${{ discountPrice() }}/Night</span>
                         <a href="room_details.php?id={{ $room['room_id'] }}">Book Now</a>
                     </div>
                 @endforeach

@@ -18,18 +18,17 @@
                     <h1>Room Number {{ $room['room_number'] }}</h1>
                     <div id="titleDiv">
                         <h4>{{ $room['room_type'] }}</h4>
-                        <p>${{ discountPrice($room['discount'], $room['price']) }}/Night</p>
+                        <p>${{ discountPrice() }}/Night</p>
                     </div>
                 </div>
                 <div class="details-container__image">
-                    <img src="{{ json_decode($room['photo_url'])[0] }}" alt="">
+                    <img src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                 </div>
             </div>
             <div class="details-container__item">
 
                 <form action="" class="details-container__form" method="POST">
                     <h2>Check Availability</h2>
-                    {{-- <input type="hidden" name="room_id" id="room_id" value="{{ $room['id'] }}"> --}}
                     <ul>
                         <li>
                             <label for="checkin" class="">Check In</label>

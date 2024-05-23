@@ -73,7 +73,7 @@
                 <div class="contactForm__form__inputContainer">
 
                     <li>
-                        <input type="text" name="subject" class="field-style field-full" placeholder="Enter subject" />
+                        <input type="text" name="subject" class="field-style field-full" placeholder="Enter subject" id="subjectInput"/>
                     </li>
                 </div>
                 <li>
