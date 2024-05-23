@@ -14,7 +14,7 @@
     <section class="offermain">
         @foreach ($rooms as $room)
             <div class="offermain__item">
-                <a href="room_details.php?id={{ $room['room_id'] }}"><img src="{{ json_decode($room['photo_url'])[0] }}"
+                <a href="room_details.php?id={{ $room['room_id'] }}"><img src="{{ ($room['photos'])[0]['photo'] }}"
                         alt=""></a>
                 <div class="offermain__item-card">
                     <div class="offermain__item__container1">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="offermain__item__container2__list">
                             <ul>
-                                @foreach (json_decode($room['amenity_name']) as $amenity)
+                                @foreach (($room['amenity']) as $amenity)
                                     <li><img src="{{ getAmenities($amenity) }}">{{ $amenity }}</li>
                                 @endforeach
                             </ul>
@@ -54,9 +54,9 @@
             <div class="swiper-wrapper popularList__slider__wrapper">
                 @foreach ($popular as $room)
                     <div class="swiper-slide popularList__slider__wrapper__slide">
-                        <img id="roomsImg" src="{{ json_decode($room['photo_url'])[0] }}" alt="">
+                        <img id="roomsImg" src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                         <div id="amenities_frame">
-                            @foreach (json_decode($room['amenity_name']) as $amenity)
+                            @foreach (($room['amenity']) as $amenity)
                                 <img src="{{ getAmenities($amenity) }}" id="roomsComplement">
                             @endforeach
                         </div>

@@ -7,7 +7,7 @@
                 <img src="./assets/header/menu.png" id="menuClosed">
                 <img src="./assets/header/menu2.png" id="menuOpened" class="hidden">
             </button>
-            <a href="index.php" class="header__logo"></a>
+            <a href="{{ route('index') }}" class="header__logo"></a>
         </div>
 
         <ul class="header__container__navbar hidden">
