@@ -46,8 +46,16 @@ class Room extends Model
     {
         return self::with(['photos', 'amenity'])
             ->where('price', '>', 300)
-            ->where('offer', 0)
             ->take(3)
+            ->get();
+    }
+
+    public static function related()
+    {
+        return self::with(['photos', 'amenity'])
+            ->where('price', '>', 200)
+            ->where('offer', 0)
+            ->take(2)
             ->get();
     }
 

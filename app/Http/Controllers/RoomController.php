@@ -51,7 +51,8 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        return view('room_details', ['room' => $room]);
+        $related = Room::related();
+        return view('room_details', ['room' => $room, 'related' => $related]);
     }
 
     /**
