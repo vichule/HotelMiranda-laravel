@@ -17,3 +17,4 @@ Route::get('/rooms', [RoomController::class, 'roomIndex'])->name('rooms');
 Route::get('/room_details/{room}', [RoomController::class, 'show'])->name('room_details');
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

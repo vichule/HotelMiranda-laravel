@@ -15,7 +15,7 @@
 
         <div class="contactIntro__information">
             <div class="footerContainer__main__contact__item back01">
-                <img class="footerContainer__main__contact__item__img" src="./assets/footer/address-icon.png"
+                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/address-icon.png")}}
                     alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Hotel Address</h1>
@@ -23,14 +23,14 @@
                 </div>
             </div>
             <div class="footerContainer__main__contact__item back02">
-                <img class="footerContainer__main__contact__item__img" src="./assets/footer/phone-icon.png" alt="">
+                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/phone-icon.png")}} alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Phone Number</h1>
                     <p class="footerContainer__main__contact__item__description__par">999999999</p>
                 </div>
             </div>
             <div class="footerContainer__main__contact__item back03">
-                <img class="footerContainer__main__contact__item__img" src="./assets/footer/email-icon.png" alt="">
+                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/email-icon.png")}} alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Email</h1>
                     <p class="footerContainer__main__contact__item__description__par">fakeemail1@gmail.com</p>
@@ -45,7 +45,29 @@
     </section>
 
     <section class="contactForm">
-        <form class="contactForm__form" method="POST">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <form class="contactForm__form" method="POST" action="{{ route('contact.store') }}">
+            @csrf
             <ul>
                 <div class="contactForm__form__inputContainer">
                     <li>
@@ -73,7 +95,8 @@
                 <div class="contactForm__form__inputContainer">
 
                     <li>
-                        <input type="text" name="subject" class="field-style field-full" placeholder="Enter subject" id="subjectInput"/>
+                        <input type="text" name="subject" class="field-style field-full" placeholder="Enter subject"
+                            id="subjectInput" />
                     </li>
                 </div>
                 <li>

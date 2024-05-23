@@ -20,4 +20,6 @@ class Contact extends Model
         'photo',
         'status'
     ];
+
+    public $timestamps = false;
 }
