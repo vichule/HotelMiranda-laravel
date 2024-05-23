@@ -1849,6 +1849,9 @@ header {
   .contactBtn {
     margin-top: 2em;
   }
+  #subjectInput{
+    width: 61em;
+  }
 }
 .details {
   margin: 5em 2em 2em 2em;

@@ -22,19 +22,42 @@ class Room extends Model
         'status'
     ];
 
-    public function bookings(): HasMany{
+    public function bookings(): HasMany
+    {
         return $this->hasMany(Booking::class);
     }
 
-    public function photos(): BelongsToMany{
+    public function photos(): BelongsToMany
+    {
         return $this->belongsToMany(Photo::class, 'room_photos', 'room_id', 'photo_id');
     }
 
-    public function amenity() : BelongsToMany{
+    public function amenity(): BelongsToMany
+    {
         return $this->belongsToMany(Amenity::class, 'room_amenities', 'room_id', 'amenities_id');
     }
 
-    public static function offers() {
-        return self::with(['photos', 'amenity'])->where('offer', 'true')->get();
+    public static function offers()
+    {
+        return self::with(['photos', 'amenity'])->where('offer', 1)->take(8)->get();
     }
+
+    public static function popular()
+    {
+        return self::with(['photos', 'amenity'])
+            ->where('price', '>', 300)
+            ->where('offer', 0)
+            ->take(3)
+            ->get();
+    }
+
+    
+    
+    public function discountPrice (){
+        $finalPrice = $this->price - ($this->price * $this->discount / 100);
+        return round($finalPrice);
+        
+    }
+
+    
 }
