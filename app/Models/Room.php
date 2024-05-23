@@ -59,13 +59,25 @@ class Room extends Model
             ->get();
     }
 
-    
-    
-    public function discountPrice (){
+
+
+    public function discountPrice()
+    {
         $finalPrice = $this->price - ($this->price * $this->discount / 100);
         return round($finalPrice);
-        
     }
 
-    
+    public static function roomAvailability($check_in, $check_out)
+    {
+        return self::with(['photos', 'amenity'])
+            ->whereNotIn('id', function ($query) use ($check_in, $check_out) {
+                $query->select('room_id')
+                    ->from('bookings')
+                    ->where(function ($query) use ($check_in, $check_out) {
+                        $query->whereBetween('check_in', [$check_in, $check_out])
+                            ->orWhereBetween('check_out', [$check_in, $check_out]);
+                    });
+            })
+            ->get();
+    }
 }

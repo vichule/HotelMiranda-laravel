@@ -16,10 +16,17 @@ class RoomController extends Controller
         return view('index', ['rooms' => $rooms]);
     }
 
-    public function roomIndex()
+    public function roomIndex(Request $request)
     {
-        $rooms = Room::with(['photos', 'amenity'])->get();
-        
+        $check_in = $request->input('arrival');
+        $check_out = $request->input('departure');
+
+        if ($check_in && $check_out) {
+            $rooms = Room::roomAvailability($check_in, $check_out);
+        } else {
+            $rooms = Room::with(['photos', 'amenity'])->get();
+        }
+
         return view('rooms', ['rooms' => $rooms]);
     }
 
