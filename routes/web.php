@@ -4,20 +4,16 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/about', function () {
-    return view('about');
-});
 
-Route::get('/offers', function () {
-    return view('offers');
-});
+Route::get('/about', 'about')->name('about');
 
-Route::get('/rooms', [RoomController::class, 'index']);
+Route::get('/offers', 'offers')->name('offers');
 
-Route::get('/rooms_details/{room}', [RoomController::class, 'show']);
+Route::get('/', [RoomController::class, 'roomIndex'])->name('index');
 
-Route::get('/contact', [ContactController::class, 'create']);
+Route::get('/rooms', [RoomController::class, 'index'])->name('rooms');
+
+Route::get('/rooms_details/{room}', [RoomController::class, 'show'])->name('rooms_details');
+
+Route::get('/contact', [ContactController::class, 'create'])->name('contact');
