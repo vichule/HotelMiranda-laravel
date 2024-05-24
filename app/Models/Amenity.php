@@ -12,7 +12,7 @@ class Amenity extends Model
     protected $fillable = ['name'];
 
 
-    public function getAmenities() {
+    public function getAmenitiesIcon() {
     
         $amenities_list = [
             'Air conditioner' => asset('assets/amenitiesIcons/air.svg'),

@@ -70,7 +70,7 @@
                     <div class="swiper-slide homerooms__slider__container_item">
                         <div class="homerooms__framediv">
                             @foreach (($room['amenity']) as $amenity)
-                                <img src="{{ $amenity->getAmenities() }}" class="homerooms__complements">
+                                <img src="{{ $amenity->getAmenitiesIcon() }}" class="homerooms__complements">
                             @endforeach
                         </div>
                         <img id="roomsImg" src="{{ ($room['photos'])[0]['photo'] }}" alt="">

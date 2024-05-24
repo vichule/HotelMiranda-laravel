@@ -35,7 +35,7 @@
                         <div class="offermain__item__container2__list">
                             <ul>
                                 @foreach (($room['amenity']) as $amenity)
-                                    <li><img src="{{ $amenity->getAmenities() }}">{{ $amenity['name'] }}</li>
+                                    <li><img src="{{ $amenity->getAmenitiesIcon() }}">{{ $amenity['name'] }}</li>
                                 @endforeach
                             </ul>
 
@@ -57,7 +57,7 @@
                         <img id="roomsImg" src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                         <div id="amenities_frame">
                             @foreach (($room['amenity']) as $amenity)
-                                <img src="{{ $amenity->getAmenities() }}" id="roomsComplement">
+                                <img src="{{ $amenity->getAmenitiesIcon() }}" id="roomsComplement">
                             @endforeach
                         </div>
                         <h1 class="popularList__slider__wrapper__slide__title">{{ $room['room_type'] }}</h1>

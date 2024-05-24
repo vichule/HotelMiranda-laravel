@@ -19,7 +19,7 @@
                         <img src="{{ ($room['photos'])[0]['photo'] }}" alt="">
                         <div id="amenities_frame">
                             @foreach (($room['amenity']) as $amenity)
-                                <img src="{{ $amenity->getAmenities() }}" id="roomsComplement">
+                                <img src="{{ $amenity->getAmenitiesIcon() }}" id="roomsComplement">
                             @endforeach
                         </div>
                         <h1 class="popularList__slider__wrapper__slide__title">{{ $room['room_type'] }}</h1>
