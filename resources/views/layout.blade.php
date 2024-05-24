@@ -20,7 +20,7 @@
         @if (session('error'))
             Swal.fire({
                 toast: true,
-                position: "top-bottom",
+                position: "bottom-end",
                 showConfirmButton: false,
                 timer: 3000,
                 icon: 'error',
