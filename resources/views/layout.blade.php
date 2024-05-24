@@ -33,4 +33,7 @@
     @show
     @component('footer')
     @endcomponent
+    @php
+        session()->forget(['error','success']); 
+    @endphp
 </body>

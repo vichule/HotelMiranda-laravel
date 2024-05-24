@@ -32,9 +32,11 @@ class ContactController extends Controller
 
         try {
             Contact::create($request->all());
-            return view('contact')->with('success', 'Data submitted!');
+            session()->flash('success', 'Data submitted!');
+            return view('contact');
         } catch (\Exception $e) {
-            return view('contact')->with('error', 'Error sending data, please try again');
+            session()->flash('error', 'Error sending data, please try again');
+            return view('contact');
         }
     }
 }
