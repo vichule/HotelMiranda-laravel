@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
@@ -19,6 +20,8 @@ Route::get('/room_details/{room}', [RoomController::class, 'show'])->name('room_
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::post('/room', [BookingController::class, 'store'])->name('booking.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

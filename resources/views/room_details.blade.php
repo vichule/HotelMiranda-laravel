@@ -27,38 +27,40 @@
             </div>
             <div class="details-container__item">
 
-                <form action="" class="details-container__form" method="POST">
+                <form action="" class="details-container__form" method="POST" action="{{ route('booking.store') }}">
+                    @csrf
                     <h2>Check Availability</h2>
+                    <input type="hidden" name="room_id" id="room_id" value="{{ $room->id }}">
                     <ul>
                         <li>
-                            <label for="checkin" class="">Check In</label>
+                            <label for="check_in" class="">Check In</label>
                             <input type="date" id="check_in" name="check_in" min="2024-03-01" max="2028-12-31"
-                                class="" />
+                                class="" required />
                         </li>
                         <li>
                             <label for="checkout" class="">Check Out</label>
                             <input type="date" id="check_out" name="check_out" min="2024-03-25" max="2028-12-31"
-                                class="" />
+                                class=""  required/>
                         </li>
                         <li>
                             <label for="first_name">First Name</label>
-                            <input type="text" name="first_name" id="first_name">
+                            <input type="text" name="first_name" id="first_name"  required>
                         </li>
                         <li>
                             <label for="last_name">Last Name</label>
-                            <input type="text" name="last_name" id="last_name">
+                            <input type="text" name="last_name" id="last_name" required>
                         </li>
                         <li>
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </li>
                         <li>
                             <label for="phone">Phone</label>
-                            <input type="tel" name="phone" id="phone">
+                            <input type="tel" name="phone" id="phone" required>
                         </li>
                         <li>
                             <label for="message">Special Message</label>
-                            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" ></textarea>
                         </li>
                         <li>
                             <input type="submit" value="BOOK ROOM" class="checkBtn" />
