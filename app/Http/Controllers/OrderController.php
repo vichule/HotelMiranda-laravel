@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,39 +13,32 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $order_type = Order::order_types();
+        $order = Order::order();
+        $rooms = Room::rooms();
+
+        return view('dashboard', ['order' => $order, 'rooms' => $rooms, 'type' => $order_type]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'user_id' => 'integer|required',
+            'room_id' => 'integer|required',
+            'type' => 'string|required',
+            'description' => 'string|required'
+        ]);
+        Order::create($request->all());
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Order $order)
-    {
-        //
-    }
+        $order_type = Order::order_types();
+        $order = Order::order();
+        $rooms = Room::rooms();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
-    {
-        //
+        return view('dashboard', ['order' => $order, 'rooms' => $rooms, 'type' => $order_type]);
     }
 
     /**
@@ -60,6 +54,12 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+
+        $order_type = Order::order_types();
+        $order = Order::order();
+        $rooms = Room::rooms();
+
+        return view('dashboard', ['order' => $order, 'rooms' => $rooms, 'type' => $order_type]);
     }
 }
