@@ -103,44 +103,26 @@
                 {{ __('Please fill all the options in order to place a new order:') }}
             </h2>
 
-            <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
-
-                <x-text-input
-                    id="password"
-                    name="password"
-                    type="password"
-                    class="mt-1 block w-3/4"
-                    placeholder="{{ __('Password') }}"
-                />
-
-                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+            <div >
+                <x-input-label for="room_id" :value="__('Room Number')" />
+                <select  name="room_id" id="room">
+                    
+                </select>
+                <x-input-error :messages="$errors->get('room_id')" />
             </div>
-            <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
 
-                <x-text-input
-                    id="password"
-                    name="password"
-                    type="password"
-                    class="mt-1 block w-3/4"
-                    placeholder="{{ __('Password') }}"
-                />
-
-                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+            <div >
+                <x-input-label for="room_type" :value="__('Room Type')" />
+                <select  name="room_type" id="room_type">
+                    
+                </select>
+                <x-input-error :messages="$errors->get('room_type')" />
             </div>
-            <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
 
-                <x-text-input
-                    id="password"
-                    name="password"
-                    type="password"
-                    class="mt-1 block w-3/4"
-                    placeholder="{{ __('Password') }}"
-                />
-
-                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+            <div >
+                <x-input-label for="description" :value="__('Description')" />
+                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                <x-input-error :messages="$errors->get('description')" />
             </div>
 
             <div class="mt-6 flex justify-end">

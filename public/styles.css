@@ -1323,7 +1323,7 @@ header {
 body {
   background: #fafafa;
   color: #444;
-  font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
+  /* font: 100%/15px 'Helvetica Neue', helvetica, arial, sans-serif; */
   text-shadow: 0 1px 0 #fff;
 }
 
@@ -2512,6 +2512,7 @@ tr:last-of-type td:last-child {
   width: 15em;
   border-radius: 10em;
   height: 15em;
+  object-fit: cover;
 }
 
 .amenities-cancellation {
