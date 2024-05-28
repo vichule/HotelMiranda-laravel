@@ -26,8 +26,7 @@
         </ul>
 
         <div class="header__container__item2">
-            <button class="header__button"><img src={{asset("./assets/header/profile.png")}}></button>
-            <button class="header__button"><img src={{asset("./assets/header/search.png")}}></button>
+            <a href="{{ route('dashboard') }}"><button class="header__button"><img src={{asset("./assets/header/profile.png")}}></button></a>
         </div>
 
     </div>
