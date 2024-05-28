@@ -30,7 +30,7 @@ class OrderController extends Controller
             'user_id' => 'integer|required',
             'room_id' => 'integer|required',
             'type' => 'string|required',
-            'description' => 'string|required'
+            'description' => 'string|required|max:255'
         ]);
         Order::create($request->all());
 
