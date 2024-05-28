@@ -1,4 +1,14 @@
 <x-guest-layout>
+    @section('content')
+        <section class="bannerGeneric">
+            <p class="bannerGeneric__title">THE ULTIMATE LUXURY EXPERIENCE</p>
+            <h1 class="bannerGeneric__subtitle">Login</h1>
+            <div class="bannerGeneric__nav">
+                <a href="{{ route('index') }}" id="homeBtn">Home</a>
+                <p>|</p>
+                <a href="{{ route('login') }}" id="currentBtn">Login</a>
+            </div>
+        </section>
     <div class="mb-4 text-sm text-gray-600">
         {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
     </div>
@@ -28,4 +38,5 @@
             </button>
         </form>
     </div>
+    @endsection
 </x-guest-layout>

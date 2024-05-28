@@ -1,4 +1,14 @@
 <x-guest-layout>
+    @section('content')
+        <section class="bannerGeneric">
+            <p class="bannerGeneric__title">THE ULTIMATE LUXURY EXPERIENCE</p>
+            <h1 class="bannerGeneric__subtitle">Password</h1>
+            <div class="bannerGeneric__nav">
+                <a href="{{ route('index') }}" id="homeBtn">Home</a>
+                <p>|</p>
+                <a href="{{ route('login') }}" id="currentBtn">Login</a>
+            </div>
+        </section>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -36,4 +46,5 @@
             </x-primary-button>
         </div>
     </form>
+    @endsection
 </x-guest-layout>
