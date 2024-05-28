@@ -74,6 +74,7 @@ header {
 .header__button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .header__logo {
@@ -1107,6 +1108,10 @@ header {
   margin-bottom: 2em;
 }
 
+.footerContainer__main__intro__socials {
+  display: flex;
+}
+
 .footerContainer__main__intro__socials__img {
   width: 3em;
   background-color: #f1f1f1;
@@ -1291,6 +1296,7 @@ header {
   font-size: 1em;
   font-weight: 700;
   letter-spacing: -0.04em;
+  color: #BEAD8E;
 }
 
 .bannerGeneric__nav p {
@@ -1305,6 +1311,11 @@ header {
 
 #currentBtn {
   color: #BEAD8E;
+}
+
+#center-div {
+  max-width: 950px;
+  margin: 11em auto;
 }
 
 @media (width > 1000px) {
@@ -2016,7 +2027,7 @@ header {
   position: absolute;
 }
 
-.contactForm{
+.contactForm {
   text-align: -webkit-center;
 }
 
