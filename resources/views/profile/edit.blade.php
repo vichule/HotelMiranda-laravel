@@ -1,4 +1,14 @@
 <x-app-layout>
+    @section('content')
+        <section class="bannerGeneric">
+            <p class="bannerGeneric__title">THE ULTIMATE LUXURY EXPERIENCE</p>
+            <h1 class="bannerGeneric__subtitle">Profile</h1>
+            <div class="bannerGeneric__nav">
+                <a href="{{ route('index') }}" id="homeBtn">Home</a>
+                <p>|</p>
+                <a href="{{ route('dashboard') }}" id="currentBtn">Dashboard</a>
+            </div>
+        </section>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -26,4 +36,5 @@
             </div>
         </div>
     </div>
+    @endsection
 </x-app-layout>
