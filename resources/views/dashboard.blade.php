@@ -59,10 +59,11 @@
                     </div>
                 </div>
                 <div>
-                    <button class="orderBtn" x-data="" x-on:click.prevent="$dispatch('open-modal', 'place-user-order')">New Order</button>
-                    
+                    <button class="orderBtn" x-data=""
+                        x-on:click.prevent="$dispatch('open-modal', 'place-user-order')">New Order</button>
 
-    
+
+
                 </div>
             </div>
             <div id="center-div">
@@ -73,69 +74,84 @@
                         <th>Room Number</th>
                         <th>*</th>
                     </tr>
-                    <tr>
-                        <td>Food</td>
-                        <td>Noodles with pork</td>
-                        <td>13</td>
-                        <td><button>Edit</button><button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Food</td>
-                        <td>Pizza Margarita</td>
-                        <td>11</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Other</td>
-                        <td>Lasagna</td>
-                        <td>8</td>
-                        <td></td>
-                    </tr>
+                    @if (count($order) > 0)
+                        @foreach ($order as $order)
+                            <tr>
+                                <td>{{ $order->type }}</td>
+                                <td>{{ $order->description }}</td>
+                                <td>Room {{ $order->room->room_number }}</td>
+                                <td><x-secondary-button><i class="fa-solid fa-delete-left"></i></x-secondary-button><x-secondary-button><i class="fa-solid fa-pen"></i></x-secondary-button></td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td>Food</td>
+                            <td>Noodles with pork</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Food</td>
+                            <td>Pizza Margarita</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td>Lasagna</td>
+                            <td>8</td>
+                        </tr>
+                    @endif
+
+
                 </table>
             </div>
         </div>
-{{-- new order modal --}}
+        {{-- new order modal --}}
         <x-modal name="place-user-order" :show="$errors->userDeletion->isNotEmpty()" focusable>
-        <form method="post" action="" class="p-6">
-            @csrf
+            <form method="post" action="{{ route('order.store') }}" class="p-6">
+                @csrf
+                <h1>- New Order -</h1>
+                <h2 class="text-lg font-medium text-gray-900">
+                    {{ __('Please fill all the options in order to place a new order:') }}
+                </h2>
 
-            <h2 class="text-lg font-medium text-gray-900">
-                {{ __('Please fill all the options in order to place a new order:') }}
-            </h2>
+                <div>
+                    <x-input-label for="room_id" :value="__('Room Number')" />
+                    <select name="room_id" id="room">
+                        @foreach ($rooms as $room)
+                            <option value="{{ $room->id }}">Room {{ $room->room_number }}</option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('room_id')" />
+                </div>
 
-            <div >
-                <x-input-label for="room_id" :value="__('Room Number')" />
-                <select  name="room_id" id="room">
-                    
-                </select>
-                <x-input-error :messages="$errors->get('room_id')" />
-            </div>
+                <div>
+                    <x-input-label for="type" :value="__('Order Type')" />
+                    <select name="type" id="type">
+                        @foreach ($type as $order_type)
+                            <option value="{{ $order_type }}">{{ $order_type }}</option>
+                        @endforeach
+                    </select>
+                    <x-input-error :messages="$errors->get('type')" />
+                </div>
 
-            <div >
-                <x-input-label for="room_type" :value="__('Room Type')" />
-                <select  name="room_type" id="room_type">
-                    
-                </select>
-                <x-input-error :messages="$errors->get('room_type')" />
-            </div>
+                <div>
+                    <x-input-label for="description" :value="__('Description')" />
+                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                    <x-input-error :messages="$errors->get('description')" />
+                </div>
 
-            <div >
-                <x-input-label for="description" :value="__('Description')" />
-                <textarea name="description" id="description" cols="30" rows="5"></textarea>
-                <x-input-error :messages="$errors->get('description')" />
-            </div>
+                <div class="mt-6 flex">
+                    <x-secondary-button x-on:click="$dispatch('close')">
+                        {{ __('Cancel') }}
+                    </x-secondary-button>
 
-            <div class="mt-6 flex justify-end">
-                <x-secondary-button x-on:click="$dispatch('close')">
-                    {{ __('Cancel') }}
-                </x-secondary-button>
-
-                <x-secondary-button class="ms-3" style="background-color:#BEAD8E; color: white;">
-                    {{ __('Place New Order') }}
-                </x-secondary-button>
-            </div>
-        </form>
-    </x-modal>
-    {{-- end order modal --}}
+                    <x-primary-button class="ms-3" style="background-color:#BEAD8E; color: white;">
+                        {{ __('Place New Order') }}
+                    </x-primary-button>
+                </div>
+                <input type="hidden" name="user_id" x-bind:value="{{ Auth::user()->id }}">
+            </form>
+        </x-modal>
+        {{-- end order modal --}}
     @endsection
 </x-app-layout>
