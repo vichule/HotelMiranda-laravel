@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
 {
@@ -26,6 +27,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'user_id' => 'integer|required',
             'room_id' => 'integer|required',
@@ -34,11 +36,9 @@ class OrderController extends Controller
         ]);
         Order::create($request->all());
 
-        $order_type = Order::order_types();
-        $order = Order::order();
-        $rooms = Room::rooms();
+        return Redirect::route('dashboard');
 
-        return view('dashboard', ['order' => $order, 'rooms' => $rooms, 'type' => $order_type]);
+
     }
 
     /**
