@@ -22,6 +22,12 @@ class Room extends Model
         'status'
     ];
 
+    public static function rooms()
+    {
+        return self::with(['photos', 'amenity'])
+        ->get();
+    }
+
     public function bookings(): HasMany
     {
         return $this->hasMany(Booking::class);

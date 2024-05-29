@@ -17,8 +17,6 @@ class BookingController extends Controller
             'last_name' => 'required|string|max:255',
             'check_in' => 'required|date|after:date',
             'check_out' => 'required|date|after:check_in',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|integer',
             'notes' => 'required|string|max:255',
             'room_id' => 'required|integer'
         ]);
