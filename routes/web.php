@@ -28,8 +28,8 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/dashboard', [OrderController::class, 'index'])->name('dashboard');
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
-    Route::patch('/order/edit/{order}', [OrderController::class, 'update'])->name('order.update');
-    Route::delete('/order/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+    Route::patch('/order', [OrderController::class, 'update'])->name('order.update');
+    Route::delete('/order', [OrderController::class, 'destroy'])->name('order.destroy');
 
 });
 

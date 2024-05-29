@@ -37,29 +37,33 @@ class OrderController extends Controller
         Order::create($request->all());
 
         return Redirect::route('dashboard');
-
-
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request)
     {
-        //
+        $order = Order::find($request->id);
+        $request->validate([
+            'type' => 'string|required',
+            'description' => 'string|required|max:255'
+        ]);
+        $order->description = $request->description;
+        $order->type = $request->type;
+        $order->save();
+
+        return Redirect::route('dashboard');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy(Request $request)
     {
+        $order = Order::find($request->id);
         $order->delete();
 
-        $order_type = Order::order_types();
-        $order = Order::order();
-        $rooms = Room::rooms();
-
-        return view('dashboard', ['order' => $order, 'rooms' => $rooms, 'type' => $order_type]);
+        return Redirect::route('dashboard');
     }
 }
