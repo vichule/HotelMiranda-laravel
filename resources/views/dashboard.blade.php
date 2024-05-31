@@ -168,7 +168,7 @@
                         {{ __('Place New Order') }}
                     </x-primary-button>
                 </div>
-                <input type="hidden" name="user_id" x-bind:value="{{ Auth::user()->id }}">
+                
             </form>
         </x-modal>
         {{-- end order modal --}}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
@@ -29,12 +30,12 @@ class OrderController extends Controller
     {
         // dd($request);
         $request->validate([
-            'user_id' => 'integer|required',
             'room_id' => 'integer|required',
             'type' => 'string|required',
             'description' => 'string|required|max:255'
         ]);
-        Order::create($request->all());
+        
+        Order::create(['user_id' => Auth::id(), ...$request->all()]);
 
         return Redirect::route('dashboard');
     }
@@ -44,7 +45,7 @@ class OrderController extends Controller
      */
     public function update(Request $request)
     {
-        $order = Order::find($request->id);
+        $order = Order::findOrFail($request->id);
         $request->validate([
             'type' => 'string|required',
             'description' => 'string|required|max:255'
@@ -61,7 +62,7 @@ class OrderController extends Controller
      */
     public function destroy(Request $request)
     {
-        $order = Order::find($request->id);
+        $order = Order::findOrFail($request->id);
         $order->delete();
 
         return Redirect::route('dashboard');
