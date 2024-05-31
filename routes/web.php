@@ -19,17 +19,17 @@ Route::get('/rooms', [RoomController::class, 'index'])->name('rooms');
 
 Route::get('/room_details/{room}', [RoomController::class, 'show'])->name('room_details');
 
-Route::get('/contact', [ContactController::class, 'create'])->name('contact');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/contacts', [ContactController::class, 'create'])->name('contact');
+Route::post('/contacts', [ContactController::class, 'store'])->name('contact.store');
 
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
 
 Route::middleware('auth')->group(function () {
     
     Route::get('/dashboard', [OrderController::class, 'index'])->name('dashboard');
-    Route::post('/order', [OrderController::class, 'store'])->name('order.store');
-    Route::patch('/order', [OrderController::class, 'update'])->name('order.update');
-    Route::delete('/order', [OrderController::class, 'destroy'])->name('order.destroy');
+    Route::post('/orders', [OrderController::class, 'store'])->name('order.store');
+    Route::patch('/orders', [OrderController::class, 'update'])->name('order.update');
+    Route::delete('/orders', [OrderController::class, 'destroy'])->name('order.destroy');
 
 });
 

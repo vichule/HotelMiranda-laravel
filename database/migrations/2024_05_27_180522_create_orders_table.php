@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('room_id');
             $table->enum('type',['Food','Other']);
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('room_id')->references('id')->on('rooms');
