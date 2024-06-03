@@ -51,8 +51,8 @@
             </h2>
         </x-slot>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="py-12" style="padding: 0.5rem">
+            <div class="px-10 max-w-7xl mx-auto sm:px-6 lg:px-8 ">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         Welcome to your Dashboard {{ Auth::user()->name }}! Here you can edit, review or place new orders !
@@ -135,7 +135,7 @@
 
                 <div>
                     <x-input-label for="room_id" :value="__('Room Number')" />
-                    <select name="room_id" id="room">
+                    <select name="room_id" id="room" class="min-w-80">
                         @foreach ($rooms as $room)
                             <option value="{{ $room->id }}">Room {{ $room->room_number }}</option>
                         @endforeach
@@ -145,7 +145,7 @@
 
                 <div>
                     <x-input-label for="type" :value="__('Order Type')" />
-                    <select name="type" id="type">
+                    <select name="type" id="type" class="min-w-80">
                         @foreach ($type as $order_type)
                             <option value="{{ $order_type }}">{{ $order_type }}</option>
                         @endforeach
@@ -155,7 +155,7 @@
 
                 <div>
                     <x-input-label for="description" :value="__('Description')" />
-                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="5" class="min-w-80"></textarea>
                     <x-input-error :messages="$errors->get('description')" />
                 </div>
 
@@ -207,7 +207,7 @@
 
                 <div>
                     <x-input-label for="type" :value="__('Order Type')" />
-                    <select  x-bind:value="data.type" name="type" id="type">
+                    <select  x-bind:value="data.type" name="type" id="type" class="min-w-80">
                         @foreach ($type as $order_type)
                             <option value="{{ $order_type }}">{{ $order_type }}</option>
                         @endforeach
@@ -217,7 +217,7 @@
 
                 <div>
                     <x-input-label for="description" :value="__('Description')" />
-                    <textarea  x-bind:value="data.description" name="description" id="description" cols="30" rows="5"></textarea>
+                    <textarea  x-bind:value="data.description" name="description" id="description" cols="30" rows="5" class="min-w-80"></textarea>
                     <x-input-error :messages="$errors->get('description')" />
                 </div>
 
