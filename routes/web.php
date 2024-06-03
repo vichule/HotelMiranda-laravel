@@ -25,12 +25,11 @@ Route::post('/contacts', [ContactController::class, 'store'])->name('contact.sto
 Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
 
 Route::middleware('auth')->group(function () {
-    
+
     Route::get('/dashboard', [OrderController::class, 'index'])->name('dashboard');
     Route::post('/orders', [OrderController::class, 'store'])->name('order.store');
     Route::patch('/orders', [OrderController::class, 'update'])->name('order.update');
     Route::delete('/orders', [OrderController::class, 'destroy'])->name('order.destroy');
-
 });
 
 Route::middleware('auth')->group(function () {
@@ -39,4 +38,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

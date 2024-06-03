@@ -15,7 +15,7 @@
 
         <div class="contactIntro__information">
             <div class="footerContainer__main__contact__item back01">
-                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/address-icon.png")}}
+                <img class="footerContainer__main__contact__item__img" src={{ asset('./assets/footer/address-icon.png') }}
                     alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Hotel Address</h1>
@@ -23,14 +23,16 @@
                 </div>
             </div>
             <div class="footerContainer__main__contact__item back02">
-                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/phone-icon.png")}} alt="">
+                <img class="footerContainer__main__contact__item__img" src={{ asset('./assets/footer/phone-icon.png') }}
+                    alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Phone Number</h1>
                     <p class="footerContainer__main__contact__item__description__par">999999999</p>
                 </div>
             </div>
             <div class="footerContainer__main__contact__item back03">
-                <img class="footerContainer__main__contact__item__img" src={{asset("./assets/footer/email-icon.png")}} alt="">
+                <img class="footerContainer__main__contact__item__img" src={{ asset('./assets/footer/email-icon.png') }}
+                    alt="">
                 <div class="footerContainer__main__contact__item__description">
                     <h1 class="footerContainer__main__contact__item__description__title">Email</h1>
                     <p class="footerContainer__main__contact__item__description__par">fakeemail1@gmail.com</p>
@@ -45,7 +47,7 @@
     </section>
 
     <section class="contactForm">
-        
+
 
         @if ($errors->any())
             <div class="alert alert-danger">

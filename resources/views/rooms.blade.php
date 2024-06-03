@@ -16,16 +16,15 @@
             <div class="swiper-wrapper ">
                 @foreach ($rooms as $room)
                     <div class="swiper-slide popularList__slider__wrapper__slide">
-                        <img src="{{ ($room['photos'])[0]['photo'] }}" alt="">
+                        <img src="{{ $room['photos'][0]['photo'] }}" alt="">
                         <div id="amenities_frame">
-                            @foreach (($room['amenity']) as $amenity)
+                            @foreach ($room['amenity'] as $amenity)
                                 <img src="{{ $amenity->getAmenitiesIcon() }}" id="roomsComplement">
                             @endforeach
                         </div>
                         <h1 class="popularList__slider__wrapper__slide__title">{{ $room['room_type'] }}</h1>
                         <p class="popularList__slider__wrapper__slide__par">{{ $room['description'] }}</p>
-                        <span
-                            class="popularList__slider__wrapper__slide__price">${{ $room->discountPrice() }}/Night</span>
+                        <span class="popularList__slider__wrapper__slide__price">${{ $room->discountPrice() }}/Night</span>
                         <a href="{{ route('room_details', ['room' => $room['id']]) }}">Book Now</a>
                     </div>
                 @endforeach
@@ -36,4 +35,4 @@
             <div class="swiper-pagination"></div>
     </section>
 @endsection
-<script src={{asset("./js/swiper.js")}} type="module"></script>
+<script src={{ asset('./js/swiper.js') }} type="module"></script>

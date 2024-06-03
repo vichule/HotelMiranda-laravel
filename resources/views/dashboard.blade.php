@@ -135,7 +135,7 @@
 
                 <div>
                     <x-input-label for="room_id" :value="__('Room Number')" />
-                    <select name="room_id" id="room" class="min-w-80">
+                    <select name="room_id" id="room" class="w-full">
                         @foreach ($rooms as $room)
                             <option value="{{ $room->id }}">Room {{ $room->room_number }}</option>
                         @endforeach
@@ -145,7 +145,7 @@
 
                 <div>
                     <x-input-label for="type" :value="__('Order Type')" />
-                    <select name="type" id="type" class="min-w-80">
+                    <select name="type" id="type" class="w-full">
                         @foreach ($type as $order_type)
                             <option value="{{ $order_type }}">{{ $order_type }}</option>
                         @endforeach
@@ -155,7 +155,7 @@
 
                 <div>
                     <x-input-label for="description" :value="__('Description')" />
-                    <textarea name="description" id="description" cols="30" rows="5" class="min-w-80"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="5" class="w-full"></textarea>
                     <x-input-error :messages="$errors->get('description')" />
                 </div>
 
@@ -168,7 +168,7 @@
                         {{ __('Place New Order') }}
                     </x-primary-button>
                 </div>
-                
+
             </form>
         </x-modal>
         {{-- end order modal --}}
@@ -198,7 +198,7 @@
         {{-- edit order modal --}}
         <x-modal name="confirm-order-edit" focusable>
             <form method="post" action="{{ route('order.update') }}" class="p-6">
-                @method("patch")
+                @method('patch')
                 @csrf
                 <h1>- Edit Order -</h1>
                 <h2 class="text-lg font-medium text-gray-900">
@@ -207,7 +207,7 @@
 
                 <div>
                     <x-input-label for="type" :value="__('Order Type')" />
-                    <select  x-bind:value="data.type" name="type" id="type" class="min-w-80">
+                    <select x-bind:value="data.type" name="type" id="type" class="w-full">
                         @foreach ($type as $order_type)
                             <option value="{{ $order_type }}">{{ $order_type }}</option>
                         @endforeach
@@ -217,7 +217,8 @@
 
                 <div>
                     <x-input-label for="description" :value="__('Description')" />
-                    <textarea  x-bind:value="data.description" name="description" id="description" cols="30" rows="5" class="min-w-80"></textarea>
+                    <textarea x-bind:value="data.description" name="description" id="description" cols="30" rows="5"
+                        class="w-full"></textarea>
                     <x-input-error :messages="$errors->get('description')" />
                 </div>
 

@@ -4,8 +4,8 @@
         <p id="headerPar">We Make Your Feel Comfortable</p>
         <div class="header__container__item1">
             <button class="header__button">
-                <img src={{asset("./assets/header/menu.png")}} id="menuClosed">
-                <img src={{asset("./assets/header/menu2.png")}} id="menuOpened" class="hidden">
+                <img src={{ asset('./assets/header/menu.png') }} id="menuClosed">
+                <img src={{ asset('./assets/header/menu2.png') }} id="menuOpened" class="hidden">
             </button>
             <a href="{{ route('index') }}" class="header__logo"></a>
         </div>
@@ -26,7 +26,8 @@
         </ul>
 
         <div class="header__container__item2">
-            <a href="{{ route('dashboard') }}"><button class="header__button"><img src={{asset("./assets/header/profile.png")}}></button></a>
+            <a href="{{ route('dashboard') }}"><button class="header__button"><img
+                        src={{ asset('./assets/header/profile.png') }}></button></a>
         </div>
 
     </div>
