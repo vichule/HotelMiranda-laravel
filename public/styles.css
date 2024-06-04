@@ -1316,6 +1316,7 @@ header {
 #center-div {
   max-width: 950px;
   margin: 10em auto;
+  padding: 3rem;
 }
 
 /* Order table styles */
@@ -1342,7 +1343,6 @@ table {
   line-height: 24px;
   margin: 30px auto;
   text-align: left;
-  padding: 3em;
   border-radius: 1em;
 }
 
@@ -1444,6 +1444,7 @@ tr:last-of-type td:last-child {
 
   table {
     width: 800px;
+    padding: 3em;
   }
 
   th {
