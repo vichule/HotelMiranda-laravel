@@ -2187,7 +2187,7 @@ tr:last-of-type td:last-child {
   -moz-box-sizing: border-box;
   padding: 0.8em;
   border: none;
-  background-color: #F8F8F8;
+  background-color: #e3e3e357;
 }
 
 .contactForm__form ul li .field-full {
