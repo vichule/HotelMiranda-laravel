@@ -1,0 +1,25 @@
+name: Miranda Laravel Deployment
+on: 
+    push:
+        branches:
+            -main
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands 
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+            cd /var/www/HotelMiranda-laravel/
+            git pull origin main
+            php artisan migrate
+            npm run build
+            sudo systemctl restart apache2
+
