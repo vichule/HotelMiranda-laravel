@@ -116,7 +116,7 @@
                         <tr>
                             <td>Other</td>
                             <td>Champagne</td>
-                            <td>8</td>
+                            <td>7</td>
                         </tr>
                     @endif
 
