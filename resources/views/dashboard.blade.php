@@ -115,7 +115,7 @@
                         </tr>
                         <tr>
                             <td>Other</td>
-                            <td>Lasagna</td>
+                            <td>Champagne</td>
                             <td>8</td>
                         </tr>
                     @endif
