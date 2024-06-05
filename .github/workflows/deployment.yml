@@ -1,10 +1,9 @@
 name: Miranda Laravel Deployment
 on: 
-    push:
-        branches:
-            -main
+  push:
+    branches:
+    - main
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
