@@ -31,6 +31,6 @@ class Amenity extends Model
             'Strong Locker' => asset('assets/amenitiesIcons/locker.svg'),
         ];
     
-        return $amenities_list[$this->name];
+        return $amenities_list[$this->name].max(7);
     }
 }
