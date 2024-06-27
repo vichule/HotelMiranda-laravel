@@ -87,11 +87,14 @@ const homeRoomsSwiper = new Swiper(".homerooms__slider", {
   breakpoints: {
 
     480: {
-      slidesPerView: 2,
+      slidesPerView: 1,
     },
     768: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
+    1200: {
+      slidesPerView: 3,
+    }
   },
 });
 
@@ -209,6 +212,13 @@ const roomGridSwiper = new Swiper(".roomsGrid__slider", {
   breakpoints: {
 
     1000: {
+      slidesPerView: 2,
+      grid: {
+        rows: 4,
+        fill: 'rows'
+      },
+    },
+    1400: {
       slidesPerView: 3,
       grid: {
         rows: 4,
