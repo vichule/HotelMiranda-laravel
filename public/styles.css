@@ -2095,11 +2095,10 @@ tr:last-of-type td:last-child {
   display: flex;
   background: ghostwhite;
   height: 3em;
-  position: relative;
+  position: absolute;
   width: 100%;
   justify-content: center;
   padding: 0.5em;
-  bottom: 2em;
 }
 
 @media (width > 1000px) {
